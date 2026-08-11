@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html>
 <body>
-    <h1>Chào mừng đến với trang web của tôi!</h1>
+    <h1>Cookies</h1>
+  <pre id="cookies"></pre>
+    <script>
+  const cookieElement = document.getElementById("cookies");
+
+  const cookies = document.cookie
+    .split(";")
+    .map(cookie => cookie.trim())
+    .filter(cookie => cookie.length > 0);
+
+  if (cookies.length === 0) {
+    cookieElement.textContent = "No accessible cookies found.";
+  } else {
+    cookieElement.textContent = cookies.join("\n");
+  }
+</script>
 </body>
 </html>
