@@ -1,21 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- Responsive trên mobile -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Cookie Viewer</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      padding: 20px;
+      line-height: 1.6;
+    }
+
+    h1 {
+      font-size: 28px;
+    }
+
+    #cookies {
+      font-size: 16px;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+  </style>
+</head>
+
 <body>
-    <h1>Cookies</h1>
+
+  <h1>Cookies</h1>
+
   <pre id="cookies"></pre>
-    <script>
-  const cookieElement = document.getElementById("cookies");
 
-  const cookies = document.cookie
-    .split(";")
-    .map(cookie => cookie.trim())
-    .filter(cookie => cookie.length > 0);
+  <script>
+    const cookieElement = document.getElementById("cookies");
 
-  if (cookies.length === 0) {
-    cookieElement.textContent = "No accessible cookies found.";
-  } else {
-    cookieElement.textContent = cookies.join("\n");
-  }
-</script>
+    const cookies = document.cookie
+      .split(";")
+      .map(cookie => cookie.trim())
+      .filter(cookie => cookie.length > 0);
+
+    if (cookies.length === 0) {
+      cookieElement.textContent = "No accessible cookies found.";
+    } else {
+      cookieElement.textContent = cookies.join("\n");
+    }
+  </script>
+
 </body>
 </html>
