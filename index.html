@@ -1,9 +1,8 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <!-- Responsive trên mobile -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Cookie Viewer</title>
@@ -14,6 +13,23 @@
       font-size: 18px;
       padding: 20px;
       line-height: 1.6;
+    }
+
+    .back-button {
+      display: inline-block;
+      padding: 10px 16px;
+      margin-bottom: 20px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background: #f5f5f5;
+      color: #222;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .back-button:active {
+      background: #ddd;
     }
 
     h1 {
@@ -29,6 +45,13 @@
 </head>
 
 <body>
+
+  <a
+    class="back-button"
+    href="native://movepage?name=webview_action&action=close"
+  >
+    ← Back
+  </a>
 
   <h1>Cookies</h1>
 
@@ -51,3 +74,4 @@
 
 </body>
 </html>
+```
